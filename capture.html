@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+
+        }
+        .div{
+            width: 40vw;
+            height: 50vh;
+            background-color: aqua;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .a{
+            padding-left: 200px;
+            padding-top: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            font-size: 25px;
+        }
+        i{
+            padding: 5px;
+            font-size: 25px;
+        }
+        #btn{
+            border-radius: 10px;
+        }
+        h1{
+            font-size: 3vw;
+            font-style: italic;
+        }
+        #btn1{
+            padding: 20px 60px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        #h3{
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 5px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+   <div class="div">
+   <h1>capture code</h1>
+   <table>
+    <tr>
+        <td><input type="text" class="a" id="inp1"><button id="btn" onclick="code1()"><i class="fa-solid fa-arrows-rotate fa-beat">
+
+        </i></button></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" class="a" id="inp2">
+        </td>
+    </tr>
+    <tr><td><h1 id="h3"></h1></td></tr>
+    <tr>
+        <td><center><button id="btn1" onclick="cal()">SUBMIT</button></center></td>
+    </tr>
+   </table>
+
+   </div>
+   <script>
+    function code1()
+    {
+        let code="";
+        let arrcode=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u',
+    'v','w','x','y','z',0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O',
+     'P','Q','R','S','T','U','V','W','X','Y','Z']
+     for(i=0;i<=6;i++)
+     {
+        let c=Math.floor(Math.random()*(arrcode.length))
+        code+=arrcode[c]
+     }
+     console.log(code)
+     document.getElementById("inp1").value=code;
+
+    }
+    function cal()
+    {
+        let inp1=document.getElementById("inp1").value;
+        console.log(inp1)
+        let inp2=document.getElementById("inp2").value;
+        console.log(inp2)
+        if(inp1==inp2)
+        {
+            open('https://www.facebook.com')
+        }
+        else{
+            document.getElementById("h3").innerHTML='not matching data';
+        }
+    }
+   </script>
+</body>
+</html>
